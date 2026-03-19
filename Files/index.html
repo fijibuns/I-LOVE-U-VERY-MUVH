@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>For You</title>
+  <style>
+
+    .image-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* space between images */
+  margin-top: 20px;
+}
+
+.image-row img {
+  width: 45%;        /* makes them fit side by side */
+  max-width: 140px;  /* keeps them small */
+  border-radius: 14px;
+}
+
+    :root {
+      --bg1: #fff7fb;
+      --bg2: #fdf2f8;
+      --card: rgba(255, 255, 255, 0.85);
+      --text: #4a3342;
+      --muted: #8b6b7d;
+      --accent: #d46a92;
+      --accent-dark: #b84f79;
+      --border: rgba(212, 106, 146, 0.18);
+      --shadow: 0 18px 45px rgba(155, 96, 121, 0.14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: linear-gradient(160deg, var(--bg1), var(--bg2));
+      color: var(--text);
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .hidden { display: none; }
+
+    h1 { margin: 0 0 10px; }
+
+    .subtext { color: var(--muted); margin-bottom: 20px; }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+    }
+
+    .letter img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 16px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 80px;
+      border: none;
+      border-radius: 12px;
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <div id="lock">
+    <h1>For you 💗</h1>
+    <p class="subtext">Enter the password</p>
+    <input id="pw" type="password" placeholder="Password" />
+    <button onclick="check()">Open</button>
+    <p id="err" style="color:red"></p>
+  </div>
+
+  <div id="letter" class="hidden letter">
+    <h1>My Love</h1>
+
+   
+
+    <iframe src="https://open.spotify.com/embed/playlist/0xDjRGwWfYI0HY59empfJU"></iframe>
+
+    <p>to love you has been the greatest feeling I have ever known—something vast and quiet and overwhelming all at once, like standing at the edge of something infinite and realizing I am not afraid.</p>
+
+    <p>and if loving you is an act of defiance, then let it be so. let the world speak, let it judge, let it try to name this love as anything other than what it is—I would still choose you, again and again, in every lifetime they could ever deny us.</p>
+
+    <p>because your love is not something meant to be hidden. it is not something small or fleeting. it is something that deepens when it is held—something that softens and brightens and becomes warmer in the space between us, in the quiet moments where your presence feels like home.</p>
+
+    <p>to hold your love is to understand it fully—not as something distant or imagined, but as something real, something living. it lingers in every glance, every touch, every silence that no longer feels empty but full of you.</p>
+
+    <p>and if this is defiance, then it is the kind I will carry gently, proudly—because loving you has never felt like rebellion.</p>
+
+    <p>it has only ever felt like truth.</p>
+
+     <div class="image-row">
+      <img src="photo.jpg" />
+      <img src="cat.jpg" />
+    </div>
+    
+
+  </div>
+
+</div>
+
+<script>
+function check(){
+  if(document.getElementById('pw').value === '02202026'){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('letter').style.display='block';
+  } else {
+    document.getElementById('err').innerText='wrong password';
+  }
+}
+</script>
+
+</body>
+</html>
